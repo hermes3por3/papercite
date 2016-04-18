@@ -346,7 +346,7 @@ class Papercite {
    * @param $types An array of couples (folder, extension)
    */
   function checkFiles(&$entry, $options) {
-    $id = strtolower(preg_replace("@[/:]@", "-", $entry["cite"]));
+    $id = preg_replace("@[/:]@", "-", $entry["cite"]);
     foreach($options["checked_files"] as &$type) {
       // 0. field, 1. folder, 2. suffix, 3. extension, 4. mime-type
       if (sizeof($type) == 3) {
